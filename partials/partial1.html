@@ -1,5 +1,9 @@
 <div class="wrapper" data-ng-model="user">
 
+  <input type='text' ng-model='typedName' /> <button type='button' ng-click='loadData()'>Load {{ typedName }}'s data</button>
+
+  <get-user-info></get-user-info>
+
   <h1>Hello {{ user.name }}!</h1>
   <h2> {{ user.email }}</h2>
 
