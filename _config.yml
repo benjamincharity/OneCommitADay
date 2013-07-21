@@ -1,2 +1,38 @@
-name: Your New Jekyll Site
-pygments: true
+###############################
+#
+# Jykell Setup
+#
+###############################
+
+source:      .
+destination: ./_site
+plugins:     ./_plugins
+layouts:     ./_layouts
+include:     []
+exclude:     [Gemfile, Gemfile.lock, s3_website.yml, compass_app_log.txt, config.rb, scss]
+keep_files:  ['.git']
+timezone:    nil
+
+markdown:      redcarpet
+markdown_ext:  markdown,mkd,mkdn,md
+textile_ext:   textile
+
+safe:        false
+host:        0.0.0.0
+port:        4000
+baseurl:     /
+url:         http://localhost:4000
+lsi:         false
+
+meta:
+  description: "A collection of writings around web technology, user experience, user interfaces and startups."
+
+
+$breakpoint-only-small    : max-width 520px;
+$breakpoint-medium        : 520px;
+$breakpoint-medium-large  : 768px;
+$breakpoint-large         : 1000px;
+$breakpoint-very-large    : 1440px;
+$breakpoint-to-ems        : true;
+$breakpoint-hi-rez        : 2 device-pixel-ratio;
+
