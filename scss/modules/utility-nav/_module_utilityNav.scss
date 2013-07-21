@@ -17,3 +17,9 @@
   right: 2%;
   top: 2%;
 }
+
+.utility-nav__link {
+  display: inline-block;
+  @include rem('padding',12px);
+  text-decoration: underline;
+}

@@ -1,41 +1,22 @@
 /////////////////////////////////////
 //
-// Define App
-//
-/////////////////////////////////////
-var ocad = angular.module('ocad', []);
-
-
-/////////////////////////////////////
-//
-// Setup Routes
-//
-/////////////////////////////////////
-ocad.config(['$routeProvider', function($routeProvider) {
-  $routeProvider.
-      when('/', {templateUrl: 'partials/partial1.html',   controller: 'SimpleController'}).
-      when('/view2', {templateUrl: 'partials/partial1.html', controller: 'SimpleController2'}).
-      otherwise({redirectTo: '/'});
-}]);
-
-
-/////////////////////////////////////
-//
 // Define Controllers
 //
 /////////////////////////////////////
+
 var controllers = {};
 
 //
 // Controller 1
 controllers.SimpleController = function($scope, $http) {
+  var user = 'benjamincharity';
 
-  $http({method: 'GET', url: 'https://api.github.com/users/benjamincharity'}).
+  $http({method: 'GET', url: 'https://api.github.com/users/' + user}).
     success(function(data, status, headers, config) {
       // this callback will be called asynchronously
       // when the response is available
       //console.log(data, status);
-      $scope.foo = data;
+      $scope.user = data;
 
     }).
     error(function(data, status, headers, config) {
@@ -43,19 +24,26 @@ controllers.SimpleController = function($scope, $http) {
       // or server returns response with an error status.
       console.log(data, status);
     });
+
+  //$scope.changeUser = function(  ) {
+    ////user = newUser.name;
+    //console.log(user);
+    //console.log(newUser.name);
+  //};
 
 };
 
 //
 // Controller 2
 controllers.SimpleController2 = function($scope, $http) {
+  var user = 'scottopherson';
 
-  $http({method: 'GET', url: 'https://api.github.com/users/scottopherson'}).
+  $http({method: 'GET', url: 'https://api.github.com/users/' + user}).
     success(function(data, status, headers, config) {
       // this callback will be called asynchronously
       // when the response is available
       //console.log(data, status);
-      $scope.foo = data;
+      $scope.user = data;
 
     }).
     error(function(data, status, headers, config) {
@@ -65,29 +53,6 @@ controllers.SimpleController2 = function($scope, $http) {
     });
 };
 
-
+//
+// Assign controllers
 ocad.controller(controllers);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
