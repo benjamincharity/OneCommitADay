@@ -1,0 +1,55 @@
+//
+//
+//
+// $FALLBACKS
+//
+//
+// @author Benjamin Charity <ben@benjamincharity.com>
+//
+// @doc
+//  Fallbacks for older browsers must be here outside of the global namespace
+// @end
+
+
+// fallback for browsers without gradients
+// <html>
+.no-cssgradients {
+  #mydx-container {
+
+    .ui-slider-handle {
+      top: -4px;
+    }
+
+  }
+}
+
+
+// fallback for browsers without 3d transforms
+.no-csstransforms3d {
+  #mydx-container {
+
+    .listing__thumbnails {
+      // adjust the sizing to account for the pre-scaled thumbnails
+      margin-left: 0;
+      width: 100%;
+    }
+
+    // adjust for having no transforms
+    .listing__thumbnails-item {
+      margin-top: 12px;
+      width: 19.1%;
+
+      &:nth-of-type(5n+1) {
+        margin-left: 0;
+      }
+
+      &:focus,
+      &:hover {
+        .listing__thumb {
+          box-shadow: 0 0 0 1px $color-light-mid-gray;
+        }
+      }
+    }
+
+  }
+}

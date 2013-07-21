@@ -1,13 +1,16 @@
+/////////////////////////////////////
+//
+// Define App
+//
+/////////////////////////////////////
 var ocad = angular.module('ocad', []);
 
 
-//ocad.config(function( $routeProvider ) {
-  //$routeprovider
-    //.when('/', { templateurl: '/_partials/partial1.html' })
-    //.when('/view2', { templateurl: '/_partials/partial1.html' })
-    //.otherwise({ redirectto: '/' });
-//});
-
+/////////////////////////////////////
+//
+// Setup Routes
+//
+/////////////////////////////////////
 ocad.config(['$routeProvider', function($routeProvider) {
   $routeProvider.
       when('/', {templateUrl: 'partials/partial1.html',   controller: 'SimpleController'}).
@@ -16,8 +19,15 @@ ocad.config(['$routeProvider', function($routeProvider) {
 }]);
 
 
+/////////////////////////////////////
+//
+// Define Controllers
+//
+/////////////////////////////////////
 var controllers = {};
 
+//
+// Controller 1
 controllers.SimpleController = function($scope, $http) {
 
   $http({method: 'GET', url: 'https://api.github.com/users/benjamincharity'}).
@@ -36,6 +46,8 @@ controllers.SimpleController = function($scope, $http) {
 
 };
 
+//
+// Controller 2
 controllers.SimpleController2 = function($scope, $http) {
 
   $http({method: 'GET', url: 'https://api.github.com/users/scottopherson'}).

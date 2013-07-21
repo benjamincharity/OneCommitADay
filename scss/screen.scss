@@ -1,12 +1,153 @@
-.container {
-  background-color: skyBlue;
-  min-height: 200px;
-  margin: 10% auto;
-  width: 40%;
-}
 
-.utility-nav {
-  position: absolute;
-  right: 2%;
-  top: 2%;
-}
+////////////////////////////////////////////
+//
+// Items required to be outside our namespace
+//
+////////////////////////////////////////////
+
+
+// CONFIG
+// Set up all configurable variables and settings here
+@import "config";
+
+// FONTS
+// Set up all font-faces and define font mixins
+// Must be outside namespace.
+@import "fonts/fonts";
+
+
+////////////////////////////////////////////
+//
+// Setup
+//
+////////////////////////////////////////////
+
+// RESET
+// https://github.com/benjamincharity/Resets
+// Zero out all styles to begin with an even browser playing field
+@import "reset";
+
+// COMPASS
+// http://compass-style.org/
+// Include the Compass library
+@import "compass";
+
+// BREAKPOINT
+// http://breakpoint-sass.com/
+// Include Sass plugin for quick, powerful breakpoints
+@import "breakpoint";
+
+// FUNCTIONS
+// Create functions to extend your css functionality
+@import "functions";
+
+// EXTENDS
+// Create any global extends here.
+@import "extends";
+
+
+
+
+
+////////////////////////////////////////////
+//
+// THIRD PARTY
+//
+////////////////////////////////////////////
+
+
+// ANIMATE.CSS
+// http://daneden.me/animate
+//@import "third-party/animate";
+
+
+
+
+
+////////////////////////////////////////////
+//
+// Layouts
+//
+////////////////////////////////////////////
+
+
+// APP
+// Layout styles for the main app
+@import "layouts/app";
+
+
+
+
+////////////////////////////////////////////
+//
+// Modules
+//
+////////////////////////////////////////////
+
+
+// BUTTONS
+// Global button styles
+@import "modules/buttons/functions";
+@import "modules/buttons/extends";
+@import "modules/buttons/module_buttons";
+
+// UTILITY NAV
+// App Utility Nav
+@import "modules/utility-nav/functions";
+@import "modules/utility-nav/extends";
+@import "modules/utility-nav/mixins";
+@import "modules/utility-nav/module_utilityNav";
+
+// DASHBOARD
+// Dashboard styles
+@import "modules/dashboard/functions";
+@import "modules/dashboard/extends";
+@import "modules/dashboard/mixins";
+@import "modules/dashboard/module_dashboard";
+
+
+
+
+
+
+////////////////////////////////////////////
+//
+// Hacks
+//
+////////////////////////////////////////////
+
+
+// SHAME
+// Any hacks, overrides or other shit code goes here.
+@import "shame";
+
+
+
+
+
+////////////////////////////////////////////
+//
+// Development Files
+//
+////////////////////////////////////////////
+
+
+// DEV
+// Creates visual cues for working with and testing media queries
+@import "dev";
+
+
+
+
+////////////////////////////////////////////
+//
+// Fallbacks
+// Must be outside scope
+//
+////////////////////////////////////////////
+
+
+// FALLBACKS
+// Fallbacks for older browsers belong
+@import "fallbacks";
+

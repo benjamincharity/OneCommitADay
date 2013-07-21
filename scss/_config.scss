@@ -1,0 +1,174 @@
+//
+//
+//
+// $CONFIG
+//
+//
+// @author Benjamin Charity <ben@benjamincharity.com>
+//
+// @doc
+//  Set up all configurable variables and settings here.
+//  This document should contain all logic and NO styles.
+// @end
+
+
+
+
+////////////////////////////////////////////
+//
+// Compass Defaults
+//
+////////////////////////////////////////////
+
+$default-transition-duration        : 0.2s;
+$default-transition-function        : ease-in-out;
+$default-box-shadow-color           : #000;
+$default-box-shadow-h-offset        : 0;
+$default-box-shadow-v-offset        : 0;
+$default-box-shadow-blur            : 6px;
+$default-box-shadow-spread          : 0;
+$default-border-radius              : 2px;
+
+
+
+
+////////////////////////////////////////////
+//
+// Colors
+//
+////////////////////////////////////////////
+
+// Standard colors
+$color-white                        : #fff;
+$color-light-gray                   : #e4e4e4;
+$color-light-mid-gray               : #ccc;
+$color-gray                         : #666;
+$color-dark-gray                    : #444;
+$color-black                        : #222;
+$color-title-black                  : rgba(0,0,0,0.9);
+
+$color-green                        : #65d29c;
+$color-dark-green                   : #32956c;
+$color-blue                         : #62b5e2;
+$color-dark-blue                    : #1f6489;
+$color-red                          : #fb7978;
+$color-orange                       : #f2c48c;
+$color-yellow                       : #f2f18b;
+
+$color-divider                      : #a1a1a1;
+$color-social-blue                  : #2a78b6;
+
+// Tables
+$color-table-odd-row                : $color-light-gray;
+$color-table-copy                   : $color-dark-gray;
+$color-admin-row-even               : #f7f7f7;
+
+// Map
+$color-marker-seen                  : $color-light-gray;
+
+// Forms
+$color-field-active-shadow          : rgba($color-light-gray, 0.8);
+
+
+// Define reusable gradients
+//@mixin modal-bg {
+  //@include background-image(linear-gradient(
+    //rgba(71,71,70,0.98) 0%,
+    //rgba(47,47,46,0.99) 50%,
+    //rgb(31,31,31) 99%,
+    //rgb(31,31,31) 100%
+  //));
+//}
+
+//@mixin table-header-bg {
+  //@include background-image(linear-gradient(
+    //-90deg,
+    //rgb(85,85,85) 0%,
+    //rgb(51,51,51) 100%
+  //));
+//}
+
+
+
+
+////////////////////////////////////////////
+//
+// Typography
+//
+////////////////////////////////////////////
+
+// Create all font-family alias'
+$rokkitt                            : #{'Rokkitt', 'Helvetica Neue', Helvetica, sans-serif};
+$roboto                             : #{'Roboto', 'Helvetica Neue', Helvetica, sans-serif};
+$sintony                            : #{'Sintony', 'Helvetica Neue', Helvetica, sans-serif};
+$archivoNarrow                      : #{'Archivo Narrow', 'Helvetica Neue', Helvetica, sans-serif};
+
+$symbols                            : #{"showcase"};
+$monospaced-serif                   : #{"Courier New", Courier, FreeMono, "Nimbus Mono L", monospace};
+$monospaced-sans                    : #{"Lucida Console", Monaco, "DejaVu Sans Mono", "Bitstream Vera Sans Mono", monospace};
+
+// Define the site base values
+$font-base                          : #{'Helvetica Neue', Helvetica, sans-serif};
+$font-base_size                     : 16px;
+$font-base_lineHeight               : $font-base_size * 1.5;
+
+// Headers
+//$header-size_levelOne               : 12em;
+//$header-size_levelTwo               : 8em;
+
+// Sizing
+$base-font-size                     : 16px;
+$base-line-height                   : $base-font-size * 1.5;
+
+
+
+
+////////////////////////////////////////////
+//
+// Layout
+//
+////////////////////////////////////////////
+
+$site-width                         : 100%;
+//$site-width_max                     : 2400px;
+//$site-width_min                     : 300px;
+
+
+
+
+
+////////////////////////////////////////////
+//
+// Faux Media Queries
+// These classes are added to <div#mydx-container>
+//
+////////////////////////////////////////////
+
+/*
+
+Legend:
+
+  .viewport-only-small    : max-width 520px;
+  .viewport-medium        : min-width 520px;
+  .viewport-medium-large  : min-width 768px;
+  .viewport-large         : min-width 1000px;
+  .viewport-very-large    : min-width 1400px;
+  .viewport-only-medium   : min-width 520px max-width 1000px;
+  .viewport-only-large    : min-width 1000px max-width 1000px;
+
+*/
+
+
+
+////////////////////////////////////////////
+//
+// Grid Helpers
+//
+////////////////////////////////////////////
+
+// total width of page
+$width : $site-width;
+// number of columns
+$columns: 6;
+// margin between columns
+$col_margin: 2%;

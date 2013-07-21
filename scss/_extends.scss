@@ -1,0 +1,136 @@
+//
+//
+//
+// $EXTENDS
+//
+//
+// @author Benjamin Charity <ben@benjamincharity.com>
+//
+// @doc
+//  Define all global extends and silent placeholders.
+//
+//  USAGE:
+//
+//    .foo {
+//      @extend %lightblue;
+//    }
+//
+// @end
+
+
+[data-icon]:before {
+  content: attr(data-icon);
+  font-family: 'showcase';
+  font-variant: normal;
+  font-weight: normal;
+  line-height: 1;
+  margin-right: .5em;
+  speak: none;
+  text-transform: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+[data-iconafter]:after {
+  content: attr(data-iconafter);
+  font-family: 'showcase';
+  font-variant: normal;
+  font-weight: normal;
+  line-height: 1;
+  margin-left: .5em;
+  speak: none;
+  text-transform: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+// animation base class
+%animated {
+  -webkit-animation-duration: 1s;
+  -moz-animation-duration   : 1s;
+  -o-animation-duration     : 1s;
+  animation-duration        : 1s;
+  -webkit-animation-fill-mode : both;
+  -moz-animation-fill-mode    : both;
+  -o-animation-fill-mode      : both;
+  animation-fill-mode         : both;
+}
+
+// FADE IN UP - Animation
+%fadeInUp {
+  -webkit-animation-name: fadeInUp;
+  -moz-animation-name   : fadeInUp;
+  -o-animation-name     : fadeInUp;
+  animation-name        : fadeInUp;
+}
+
+@-webkit-keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+  }
+}
+
+@-moz-keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -moz-transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    -moz-transform: translateY(0);
+  }
+}
+
+@-o-keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -o-transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    -o-transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// base styling for all titles
+%titleFont {
+  color: $color-title-black;
+  line-height: 1;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+// base styling for all text/email/textarea inputs
+%formInput {
+  box-shadow: 1px 1px 0 0 $color-light-mid-gray;
+  border: none;
+  @include rem('font-size',16px);
+  @include rem('margin-bottom',12px);
+  letter-spacing: .1em;
+  padding: .4em .6em;
+  @include customTransition();
+  width: 100%;
+
+  &:focus {
+    box-shadow: 2px 2px 0 0 #666;
+    outline: 0;
+  }
+}
