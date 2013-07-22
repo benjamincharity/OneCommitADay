@@ -1,0 +1,46 @@
+//
+//
+//
+// $USER_INFO
+//
+//
+// @author Benjamin Charity <ben@benjamincharity.com>
+//
+// @doc
+//  Styles for the primary user's information.
+// @end
+
+
+// <section> container for primary user's information
+.user {
+  @include clear;
+  @include col(4);
+  background-color: rgba(white,0.2);
+}
+
+// <h1> container for user's name
+.user__name {
+  display: inline-block;
+  float: left;
+}
+
+// <a> user name link
+.user__name-link {
+  color: #444;
+}
+
+// <img> user's gravatar
+.user__image {
+  border-radius: 100%;
+  border: 2px solid $color-white;
+  float: left;
+}
+
+.user__bio {
+  float: left;
+}
+
+dl {
+  clear: both;
+  width: 100%;
+}

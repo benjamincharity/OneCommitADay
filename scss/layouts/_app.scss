@@ -14,8 +14,14 @@
 
 .container {
   background-color: skyBlue;
-  min-height: 200px;
-  margin: 10% auto;
-  width: 40%;
+  font-family: Helvetica Neue, Helvetica, sans-serif;
+  //min-height: 200px;
+  margin: 0 auto;
+  //width: 60%;
+}
+
+
+.wrapper {
+  @include row();
 }
 

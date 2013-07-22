@@ -311,9 +311,19 @@ menu {
 /* line 15, ../scss/layouts/_app.scss */
 .container {
   background-color: skyBlue;
-  min-height: 200px;
-  margin: 10% auto;
-  width: 40%;
+  font-family: Helvetica Neue, Helvetica, sans-serif;
+  margin: 0 auto;
+}
+
+/* line 24, ../scss/layouts/_app.scss */
+.wrapper {
+  width: 100%;
+}
+/* line 85, ../scss/_functions.scss */
+.wrapper::after {
+  clear: both;
+  content: "";
+  display: table;
 }
 
 /* line 15, ../scss/modules/utility-nav/_module_utilityNav.scss */
@@ -329,6 +339,68 @@ menu {
   padding: 12px;
   padding: 0.75rem;
   text-decoration: underline;
+}
+
+/* line 15, ../scss/modules/dashboard/_module_dashboard.scss */
+.external-user {
+  float: left;
+  width: 32%;
+  margin-right: 2%;
+  margin-right: 0;
+  background-color: rgba(0, 128, 0, 0.2);
+}
+
+/* line 21, ../scss/modules/dashboard/_module_dashboard.scss */
+dt {
+  font-weight: bold;
+}
+
+/* line 25, ../scss/modules/dashboard/_module_dashboard.scss */
+dd {
+  margin-bottom: .6em;
+}
+
+/* line 15, ../scss/modules/dashboard/_module_user.scss */
+.user {
+  float: left;
+  width: 66%;
+  margin-right: 2%;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+/* line 85, ../scss/_functions.scss */
+.user::after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+/* line 22, ../scss/modules/dashboard/_module_user.scss */
+.user__name {
+  display: inline-block;
+  float: left;
+}
+
+/* line 28, ../scss/modules/dashboard/_module_user.scss */
+.user__name-link {
+  color: #444;
+}
+
+/* line 33, ../scss/modules/dashboard/_module_user.scss */
+.user__image {
+  border-radius: 100%;
+  border: 2px solid white;
+  float: left;
+}
+
+/* line 39, ../scss/modules/dashboard/_module_user.scss */
+.user__bio {
+  float: left;
+}
+
+/* line 43, ../scss/modules/dashboard/_module_user.scss */
+dl {
+  clear: both;
+  width: 100%;
 }
 
 /* line 16, ../scss/_dev.scss */
