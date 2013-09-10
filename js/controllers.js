@@ -8,36 +8,45 @@ var controllers = {};
 
 //
 // Controller 1
-controllers.SimpleController = function($scope, $http) {
+controllers.SimpleController = function($scope, $http, userData) {
   // get the main user's info first
-  $http({method: 'GET', url: 'https://api.github.com/users/benjamincharity'}).
-    success(function(data, status, headers, config) {
-      // this callback will be called asynchronously
-      // when the response is available
-      //console.log(data, status);
-      $scope.user = data;
-    }).
-    error(function(data, status, headers, config) {
-      // called asynchronously if an error occurs
-      // or server returns response with an error status.
-      console.log(data, status);
-    });
+  // TODO: change to logged in user
+  var username = 'benjamincharity';
 
-  // get another user's data upon entry
-  $scope.loadData = function() {
-    $http({method: 'GET', url: 'https://api.github.com/users/' + $scope.typedName}).
-      success(function(data, status, headers, config) {
-        // this callback will be called asynchronously
-        // when the response is available
-        //console.log(data, status);
-        $scope.externalUser = data;
-      }).
-      error(function(data, status, headers, config) {
-        // called asynchronously if an error occurs
-        // or server returns response with an error status.
-        console.log(data, status);
-      });
-  }
+  // get all the tour information
+  userData.overview(username).then(function(user) {
+    // assign the tour data
+    $scope.user = user;
+  });
+
+  // get all the tour information
+  userData.starred(username).then(function(starred) {
+    // assign to our scope
+    $scope.user.starred_repos = starred.length;
+  });
+
+  // get the latest push
+  userData.lastPush(username).then(function(push) {
+
+    // return the first item that is a push event
+    function findByType(source, type) {
+      return source.filter(function( obj ) {
+        return obj.type === "PushEvent";
+      })[ 0 ];
+    }
+
+    var latestPush = findByType(push, 'PushEvent');
+    var latestPushDate = latestPush.created_at;
+    var trimmedDate = latestPushDate.substring(0, latestPushDate.indexOf('T'));
+    var splitDate = trimmedDate.split(/\s*\-\s*/g);
+    var finalDate = splitDate[1] + ' - ' + splitDate[2] + ' - ' + splitDate[0];
+    console.log(finalDate);
+
+
+    // assign to our scope
+    $scope.user.last_push = latestPushDate;
+  });
+
 };
 
 //

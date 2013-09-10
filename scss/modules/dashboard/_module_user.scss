@@ -14,9 +14,9 @@
 // <section> container for primary user's information
 .user {
   @include clear;
-  @include col(4);
   background-color: rgba(white,0.2);
 }
+
 
 // <h1> container for user's name
 .user__name {
@@ -34,13 +34,4 @@
   border-radius: 100%;
   border: 2px solid $color-white;
   float: left;
-}
-
-.user__bio {
-  float: left;
-}
-
-dl {
-  clear: both;
-  width: 100%;
 }

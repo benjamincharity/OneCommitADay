@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>{{ page.title }}</title>
     <meta name="viewport" content="width=device-width">
+    <meta name="description" content="{{ meta.description }}">
 
     <!-- syntax highlighting CSS -->
     <link rel="stylesheet" href="/css/syntax.css">
@@ -23,7 +24,7 @@
       <!--<a href="#/view2" class="utility-nav__link">Scott</a>-->
     <!--</nav>-->
 
-    <div class="container" data-ng-view=""></div>
+    <div class="container" data-ng-view="" ng-animate="{enter: 'fade-in'}"></div>
 
   </div> <!-- /container -->
 
@@ -34,7 +35,7 @@
 
   <script src="js/vendor/angular.js" type="text/javascript" charset="utf-8"></script>
   <script src="js/app.js" type="text/javascript" charset="utf-8"></script>
-  <!--<script src="js/factories.js" type="text/javascript" charset="utf-8"></script>-->
+  <script src="js/services.js" type="text/javascript" charset="utf-8"></script>
   <script src="js/routes.js" type="text/javascript" charset="utf-8"></script>
   <script src="js/controllers.js" type="text/javascript" charset="utf-8"></script>
   <!--<script src="js/directives.js" type="text/javascript" charset="utf-8"></script>-->

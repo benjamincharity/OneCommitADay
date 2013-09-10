@@ -24,8 +24,8 @@ baseurl:     /
 url:         http://localhost:4000
 lsi:         false
 
-meta:
-  description: "A collection of writings around web technology, user experience, user interfaces and startups."
+#meta:
+  #description: "A collection of writings around web technology, user experience, user interfaces and startups."
 
 
 $breakpoint-only-small    : max-width 520px;
@@ -36,3 +36,6 @@ $breakpoint-very-large    : 1440px;
 $breakpoint-to-ems        : true;
 $breakpoint-hi-rez        : 2 device-pixel-ratio;
 
+# Github stuffs
+CLIENT_ID: ENV['43f3b894d956c5c8a48d'];
+CLIENT_SECRET: ENV['34aebd77b6c1c028081af9cbdc761496aa2063b5'];

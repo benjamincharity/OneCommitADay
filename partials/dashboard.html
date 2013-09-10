@@ -9,50 +9,26 @@
       <a class="user__name-link" href="{{ user.blog }}">{{ user.name }}</a>
     </h1>
 
-    <!--<h2>{{ user.company }}</h2>-->
-
-    <p class="user__bio">
-      {{ user.bio }}
-
-      <small>Github member since {{ user.created_at | date:'longDate'}}.</small>
-    </p>
-
-
-    <dl class="user__quick-stats">
-      <dt>Public Repos</dt>
-      <dd>{{ user.public_repos }}</dd>
-
-      <dt>Followers</dt>
-      <dd>{{ user.followers }}</dd>
-
-      <dt>Following</dt>
-      <dd>{{ user.following }}</dd>
-
-      <dt>Public Gists</dt>
-      <dd>{{ user.public_gists }}</dd>
-    </dl>
+    <a class="user__github"
+      href="{{ user.html_url }}"
+      title="View {{ user.name }}'s Github profile">@{{ user.login }}</a>
 
     <!--<p style="white-space: wrap;">{{ user }}</p>-->
   </section>
 
+  <article>
+    <h1>Latest Commit</h1>
+    <p>{{ user.last_push }}</p>
+  </article>
 
-  <section class="external-user">
-    <input type='text' ng-model='typedName' placeholder="Type a Github username..." />
-    <button type='button' ng-click='loadData()'>Load {{ typedName }}'s data</button>
 
-    <h1>{{ externalUser.name }}!</h1>
-    <h2> {{ externalUser.email }}</h2>
-
-    <pre>
-      <code class="js-inject">
-        Repos: {{ externalUser.public_repos }},
-        Followers: {{ externalUser.followers }},
-        Following: {{ externalUser.following }}
-      </code>
-    </pre>
+  <section class="counts">
+    <div>Public Repos: {{ user.public_repos }}</div>
+    <div>Public Gists: {{ user.public_gists }}</div>
+    <div>Following: {{ user.following }}</div>
+    <div>Followers: {{ user.followers }}</div>
+    <div>Organizations: {{ user.organizations }}</div>
+    <div>Starred: {{ user.starred_repos }}</div>
   </section>
-
-
-
 
 </div>

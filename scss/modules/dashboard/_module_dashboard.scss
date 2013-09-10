@@ -11,17 +11,36 @@
 // @end
 
 
-// <section> container for teh external user's information
-.external-user {
-  @include col(2);
-  @include last();
-  background-color: rgba(green,0.2);
+.counts {
+  margin-top: 2em;
 }
 
-dt {
-  font-weight: bold;
+
+
+
+
+
+
+
+
+
+
+
+
+.fade-in {
+  opacity: 0;
+  transition: all 2s;
 }
 
-dd {
-  margin-bottom: .6em;
+.fade-in.fade-in-active {
+  opacity: 1;
+}
+
+.fade-out {
+  border: 6px solid green;
+  @include customTransition();
+}
+
+.fade-out-active {
+  border: 6px solid pink;
 }

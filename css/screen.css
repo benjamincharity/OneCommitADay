@@ -341,30 +341,39 @@ menu {
   text-decoration: underline;
 }
 
-/* line 15, ../scss/modules/dashboard/_module_dashboard.scss */
-.external-user {
-  float: left;
-  width: 32%;
-  margin-right: 2%;
-  margin-right: 0;
-  background-color: rgba(0, 128, 0, 0.2);
+/* line 14, ../scss/modules/dashboard/_module_dashboard.scss */
+.counts {
+  margin-top: 2em;
 }
 
-/* line 21, ../scss/modules/dashboard/_module_dashboard.scss */
-dt {
-  font-weight: bold;
+/* line 30, ../scss/modules/dashboard/_module_dashboard.scss */
+.fade-in {
+  opacity: 0;
+  transition: all 2s;
 }
 
-/* line 25, ../scss/modules/dashboard/_module_dashboard.scss */
-dd {
-  margin-bottom: .6em;
+/* line 35, ../scss/modules/dashboard/_module_dashboard.scss */
+.fade-in.fade-in-active {
+  opacity: 1;
+}
+
+/* line 39, ../scss/modules/dashboard/_module_dashboard.scss */
+.fade-out {
+  border: 6px solid green;
+  -webkit-transition: all 300ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
+  -moz-transition: all 300ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
+  -ms-transition: all 300ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
+  -o-transition: all 300ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
+  transition: all 300ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
+}
+
+/* line 44, ../scss/modules/dashboard/_module_dashboard.scss */
+.fade-out-active {
+  border: 6px solid pink;
 }
 
 /* line 15, ../scss/modules/dashboard/_module_user.scss */
 .user {
-  float: left;
-  width: 66%;
-  margin-right: 2%;
   background-color: rgba(255, 255, 255, 0.2);
 }
 /* line 85, ../scss/_functions.scss */
@@ -390,17 +399,6 @@ dd {
   border-radius: 100%;
   border: 2px solid white;
   float: left;
-}
-
-/* line 39, ../scss/modules/dashboard/_module_user.scss */
-.user__bio {
-  float: left;
-}
-
-/* line 43, ../scss/modules/dashboard/_module_user.scss */
-dl {
-  clear: both;
-  width: 100%;
 }
 
 /* line 16, ../scss/_dev.scss */
