@@ -6,48 +6,76 @@
 
 var controllers = {};
 
+
 //
 // Controller 1
-controllers.SimpleController = function($scope, $http, userData) {
-  // get the main user's info first
-  // TODO: change to logged in user
-  var username = 'benjamincharity';
+controllers.login = function($scope, $location, $window, userData, auth) {
+  console.log('login controller');
 
-  // get all the tour information
-  userData.overview(username).then(function(user) {
-    // assign the tour data
-    $scope.user = user;
-  });
+  // check for logged in user
+  if( $window.localStorage.getItem('token') ) {
 
-  // get all the tour information
-  userData.starred(username).then(function(starred) {
-    // assign to our scope
-    $scope.user.starred_repos = starred.length;
-  });
+    $location.url("/dashboard");
 
-  // get the latest push
-  userData.lastPush(username).then(function(push) {
+  }
 
-    // return the first item that is a push event
-    function findByType(source, type) {
-      return source.filter(function( obj ) {
-        return obj.type === "PushEvent";
-      })[ 0 ];
-    }
+  $scope.logIn = function() {
+    console.log('log in');
 
-    var latestPush = findByType(push, 'PushEvent');
-    var latestPushDate = latestPush.created_at;
-    var trimmedDate = latestPushDate.substring(0, latestPushDate.indexOf('T'));
-    var splitDate = trimmedDate.split(/\s*\-\s*/g);
-    var finalDate = splitDate[1] + ' - ' + splitDate[2] + ' - ' + splitDate[0];
-    console.log(finalDate);
+    auth.getAuth().then(function(result) {
+      console.log(result);
 
+      $window.localStorage.setItem('token', result.token);
+      $window.localStorage.setItem('user', result.user.login);
 
-    // assign to our scope
-    $scope.user.last_push = latestPushDate;
-  });
+      $location.url("/dashboard");
+    });
+
+  }
 
 };
+
+
+//
+// Controller 1
+controllers.dashboard = function($scope, $http, userData) {
+  console.log('dashboard controller');
+
+  // get the main user's info first
+
+
+
+  //// get all the tour information
+  userData.starred().then(function(starred) {
+    // assign to our scope
+    $scope.starred_repos = starred.length;
+    console.log($scope.starred_repos);
+  });
+
+  //// get the latest push
+  //userData.lastPush(username).then(function(push) {
+
+    //// return the first item that is a push event
+    //function findByType(source, type) {
+      //return source.filter(function( obj ) {
+        //return obj.type === "PushEvent";
+      //})[ 0 ];
+    //}
+
+    //var latestPush = findByType(push, 'PushEvent');
+    //var latestPushDate = latestPush.created_at;
+    //var trimmedDate = latestPushDate.substring(0, latestPushDate.indexOf('T'));
+    //var splitDate = trimmedDate.split(/\s*\-\s*/g);
+    //var finalDate = splitDate[1] + ' - ' + splitDate[2] + ' - ' + splitDate[0];
+    //console.log(finalDate);
+
+
+    //// assign to our scope
+    //$scope.user.last_push = latestPushDate;
+  //});
+
+};
+
 
 //
 // Assign controllers

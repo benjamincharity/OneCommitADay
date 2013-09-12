@@ -22,6 +22,7 @@ gem install breakpoint
 - http://developer.github.com/
 - http://fitzgen.github.io/github-api/
 - https://github.com/mikedeboer/node-github
+- https://github.com/cloud8421/Sinatra-HTML5-boilerplate-with-ERB--Sass-and-CoffeeScript
 
 - - -
 

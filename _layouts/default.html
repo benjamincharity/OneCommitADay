@@ -1,28 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>{{ page.title }}</title>
-    <meta name="viewport" content="width=device-width">
-    <meta name="description" content="{{ meta.description }}">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>{{ page.title }}</title>
+  <meta name="viewport" content="width=device-width">
+  <meta name="description" content="{{ meta.description }}">
 
-    <!-- syntax highlighting CSS -->
-    <link rel="stylesheet" href="/css/syntax.css">
+  <!-- syntax highlighting CSS -->
+  <link rel="stylesheet" href="/css/syntax.css">
 
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="/css/screen.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/css/screen.css">
+
+  <script src="js/vendor/oath.js" type="text/javascript" charset="utf-8"></script>
 
 </head>
 <body>
 
   <div class="window" data-ng-app="ocad">
 
-    <!--<nav class="utility-nav">-->
-      <!--<a href="https://github.com/login/oauth/authorize?client_id=43f3b894d956c5c8a48d&redirect_uri=http://localhost.com:4000/#/thanks">Log In</a>-->
-      <!--<a href="#/" class="utility-nav__link">Ben</a>-->
-      <!--<a href="#/view2" class="utility-nav__link">Scott</a>-->
-    <!--</nav>-->
+    <!--<a href="https://github.com/login/oauth/authorize?client_id=<%= client_id %>">Click here</a>-->
 
     <div class="container" data-ng-view="" ng-animate="{enter: 'fade-in'}"></div>
 
